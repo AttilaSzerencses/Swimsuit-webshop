@@ -11,10 +11,10 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 export class RegistrationComponent implements OnInit {
 
   signUpForm = new FormGroup({
-    username: new FormControl(''),
-    email: new FormControl(''),
-    password: new FormControl(''),
-    rePassword: new FormControl('')
+    username: new FormControl(),
+    email: new FormControl(),
+    password: new FormControl(),
+    rePassword: new FormControl()
   });
 
   constructor(private router: Router, private authService: AuthService) { }
