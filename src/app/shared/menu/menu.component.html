@@ -6,9 +6,10 @@
       [opened]="(isHandset$ | async) === false">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item routerLink="/main">Main Page</a>
-      <a mat-list-item routerLink="/login">Login</a>
-      <a mat-list-item routerLink="/registration">Registration</a>
+      <a mat-list-item routerLink="/main"  *ngIf="!isloggedInUser">Main Page</a>
+      <a mat-list-item routerLink="/login" *ngIf="!isloggedInUser">Login</a>
+      <a mat-list-item routerLink="/login" *ngIf="isloggedInUser">Logout</a>
+      <a mat-list-item routerLink="/registration" *ngIf="!isloggedInUser">Registration</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
@@ -24,9 +25,10 @@
       <span>Swimsuit-Webshop</span>
       <span class="spacer"></span>
       <mat-nav-list [ngClass]="{hidden: !(isHandset$ | async) === false}">
-        <a routerLink="main">Main Page</a>
-        <a routerLink="login">Login</a>
-        <a routerLink="registration">Registration</a>
+        <a routerLink="main" *ngIf="!isloggedInUser">Main Page</a>
+        <a routerLink="login" *ngIf="!isloggedInUser">Login</a>
+        <a routerLink="login" *ngIf="isloggedInUser">Logout</a>
+        <a routerLink="registration" *ngIf="!isloggedInUser">Registration</a>
       </mat-nav-list>
     </mat-toolbar>
     <ng-content></ng-content>

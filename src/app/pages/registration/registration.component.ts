@@ -23,12 +23,17 @@ export class RegistrationComponent implements OnInit {
   }
 
   onSubmit() {
-    this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred => {
-      console.log(cred);
-      this.router.navigateByUrl("/login");  
-    }).catch(error => {
-      console.log(error);
-    });
+    if (this.signUpForm.get('password')?.value == this.signUpForm.get('rePassword')?.value){
+      this.authService.signup(this.signUpForm.get('email')?.value, this.signUpForm.get('password')?.value).then(cred => {
+        console.log(cred);
+        this.router.navigateByUrl("/login");  
+      }).catch(error => {
+        console.log(error);
+      });
+    } else {
+      console.log("A két jelszó nem egyezik!");
+    }
+   
   }
 
 }
