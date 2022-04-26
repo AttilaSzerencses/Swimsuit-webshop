@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "swimsuit-webshop": {
+      "hosting": {
+        "swimsuit-webshop": [
+          "swimsuit-webshop"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "swimsuit-webshop"
+  }
+}

@@ -105,6 +105,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "swimsuit-webshop:build:production",
+            "firebaseProject": "swimsuit-webshop",
+            "firebaseHostingSite": "swimsuit-webshop"
+          }
         }
       }
     }
