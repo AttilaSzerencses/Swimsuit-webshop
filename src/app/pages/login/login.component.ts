@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import {MatCardModule} from '@angular/material/card';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
+  email = new FormControl('');
+  password = new FormControl('');
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  login() {
+    
   }
 
 }
