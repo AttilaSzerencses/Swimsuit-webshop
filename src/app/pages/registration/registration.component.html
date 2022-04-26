@@ -3,16 +3,16 @@
     <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()" >
       <h2>Registration</h2>
       <mat-form-field>
-        <input matInput type="text" placeholder="Username" FormControl="username" >
+        <input matInput type="text" placeholder="Username" [formControl]="username" >
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="email" placeholder="Email" FormControl="email" >
+        <input matInput type="email" placeholder="Email" [formControl]="email" >
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="password" placeholder="Password" FormControl="password" >
+        <input matInput type="password" placeholder="Password" [formControl]="password" >
       </mat-form-field>
       <mat-form-field>
-        <input matInput type="repassword" placeholder="Password Again" FormControl="repassword" >
+        <input matInput type="repassword" placeholder="Password Again" [formControl]="repassword" >
       </mat-form-field>
       <button mat-raised-button color="primary" type="password" >Registration</button>
     </form>
