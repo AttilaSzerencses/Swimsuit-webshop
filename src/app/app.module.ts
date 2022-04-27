@@ -7,6 +7,8 @@ import { MainComponent } from './pages/main/main.component';
 import { RegistrationComponent } from './pages/registration/registration.component';
 import { LoginComponent } from './pages/login/login.component';
 import { MenuComponent } from './shared/menu/menu.component';
+import { CartComponent } from './pages/cart/cart.component';
+import { ShopComponent } from './pages/shop/shop.component';
 import { LayoutModule } from '@angular/cdk/layout';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -37,6 +39,8 @@ import {AngularFireModule} from '@angular/fire/compat';
     RegistrationComponent,
     LoginComponent,
     MenuComponent,
+    ShopComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
