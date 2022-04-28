@@ -24,6 +24,14 @@ getAll(){
   return this.afs.collection<ShopItem>(this.collectionName).valueChanges();
 }
 
+getFistTen(){
+  return this.afs.collection<ShopItem>(this.collectionName,ref => ref.limit(10)).valueChanges();
+}
+
+getOrderedByAbc(){
+  return this.afs.collection<ShopItem>(this.collectionName,ref => ref.orderBy("name","asc")).valueChanges();
+}
+
 getById(id: string){
   return this.afs.collection<ShopItem>(this.collectionName).doc(id).valueChanges();
 }

@@ -31,6 +31,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
 import {AngularFireModule} from '@angular/fire/compat';
+import { DateFormatPipe } from './shared/pipes/date-format.pipe';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {AngularFireModule} from '@angular/fire/compat';
     LoginComponent,
     MenuComponent,
     ShopComponent,
-    CartComponent
+    CartComponent,
+    DateFormatPipe
   ],
   imports: [
     BrowserModule,

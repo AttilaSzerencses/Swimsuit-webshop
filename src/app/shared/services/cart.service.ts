@@ -11,6 +11,7 @@ export class CartService {
 
   create(cart: Cart){
     cart.id=this.afs.createId();
+    return this.afs.collection<Cart>(this.collectionName).doc(cart.id).set(cart);
   }
 
   getAll(){
