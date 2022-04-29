@@ -1,29 +1,34 @@
-<div fxLayoutAlign="start start">
-    <button mat-raised-button color="accent" (click)="getOrderedShopItems()">
-        Order By Name
-    </button>
-    <br>
-</div>
-
-<div fxLayoutAlign="start start">
-    <button mat-raised-button color="accent" (click)="getFirstTenShopItem()">
-        Get First 10 swimsuit
-    </button>
-    <br>
-</div>
-
-<div id="container" fxFlex="15%" fxFlex.sm="33%"  fxLayout="" fxLayoutGap="20px" *ngFor="let shopItem of shopItems;">
-    <mat-card class="shopItem-card">
-        <img mat-card-image src="{{shopItem.image}}" alt="Photo of an item">
-        <mat-card-content>
-            <mat-card-title>{{shopItem.name}}</mat-card-title>
-            <mat-card-subtitle>{{shopItem.price}}</mat-card-subtitle>
-        </mat-card-content>
-        <mat-card-actions>
-            <button mat-raised-button color="accent" (click)="addItemToCart(shopItem)">
-                <mat-icon>add_shopping_cart</mat-icon>
-                Add to cart
+<div>
+    <div fxLayout="row" fxLayoutAlign="center">
+        <div fxLayout="row wrap" fxLayoutGap="0"  fxLayoutAlign="center">
+            <button mat-raised-button color="accent" (click)="getAllShopItems()">
+                List all
             </button>
-        </mat-card-actions>
-    </mat-card>
+            <button mat-raised-button color="accent" (click)="getOrderedShopItems()">
+                Order By Name
+            </button>
+            <button mat-raised-button color="accent" (click)="getFirstTenShopItem()">
+                Get First 10 swimsuit
+            </button>
+            <br>
+        </div>
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutGap="0"  fxLayoutAlign="center">
+        <div fxFlex="25%" fxFlex.xs="85%" fxFlex.sm="33%" fxLayout fxLayoutGap="20px" fxLayoutAlign="center"  *ngFor="let shopItem of shopItems;">
+            <mat-card class="shopItem-card">
+                <img mat-card-image class="image" src="{{shopItem.image}}" alt="Photo of an item">
+                <mat-card-content>
+                    <mat-card-title>{{shopItem.name}}</mat-card-title>
+                    <mat-card-subtitle>{{shopItem.price}}</mat-card-subtitle>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="accent" (click)="addItemToCart(shopItem)">
+                        <mat-icon>add_shopping_cart</mat-icon>
+                        Add to cart
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
 </div>

@@ -1,1 +1,28 @@
-<p>cart works!</p>
+<div>
+    <h1>Cart</h1>
+    <div fxLayout="row" fxLayoutAlign="center">
+        <div fxLayout="row wrap" fxLayoutGap="0"  fxLayoutAlign="center">
+            
+        </div>
+        <h2 *ngIf="!cartEmpty">Date the first item was added: {{cartItems[0].date | dateFormat}}</h2>
+    </div>
+
+    <div fxLayout="row wrap" fxLayoutGap="0"  fxLayoutAlign="center">
+        <div fxFlex="25%" fxFlex.xs="85%" fxFlex.sm="33%" fxLayout fxLayoutGap="20px" fxLayoutAlign="center"  *ngFor="let shopItem of shopItems;">
+            <mat-card class="shopItem-card">
+                <img mat-card-image class="image" src="{{shopItem.image}}" alt="Photo of an item" *ngIf="!cartEmpty">
+                <mat-card-content>
+                    <mat-card-title *ngIf="!cartEmpty">{{shopItem.name}}</mat-card-title>
+                    <mat-card-subtitle *ngIf="!cartEmpty">{{shopItem.price}}</mat-card-subtitle>
+                    <mat-card-subtitle *ngIf="!cartEmpty">{{shopItem.price}}</mat-card-subtitle>
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="accent" (click)="deleteFromCart(shopItem.id)">
+                        <mat-icon>remove_shopping_cart</mat-icon>
+                        Delete from cart
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+</div>

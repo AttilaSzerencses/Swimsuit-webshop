@@ -23,7 +23,15 @@ export class CartService {
   }
 
   getCartByUid(uid: string) {
-    return this.afs.collection<Cart>(this.collectionName,ref => ref.where('uid','==',uid)).valueChanges();
+    return this.afs.collection<Cart>(this.collectionName,ref => ref.where('u_id','==',uid)).valueChanges();
+  }
+
+  delete(id: string) {
+    return this.afs.collection<Cart>(this.collectionName).doc(id).delete();
+  }
+
+  deleteByShopItemId(id: string) {
+    return this.afs.collection<Cart>(this.collectionName,ref => ref.where('shopItem_id','==',id)).doc(id).delete();
   }
 
 
