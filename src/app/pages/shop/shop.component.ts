@@ -6,6 +6,8 @@ import { DateFormatPipe } from 'src/app/shared/pipes/date-format.pipe';
 import { CartService } from 'src/app/shared/services/cart.service';
 import { ShopItemService } from 'src/app/shared/services/shop-item.service';
 import { ShopItem } from '../../shared/models/ShopItem';
+import { Inject } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
@@ -18,7 +20,8 @@ export class ShopComponent implements OnInit {
   constructor(
     private router: Router,
     private shopItemService: ShopItemService,
-    private cartService: CartService
+    private cartService: CartService,
+    @Inject(DOCUMENT) private domDocument: Document
   ) { }
 
   ngOnInit(): void {
@@ -77,6 +80,7 @@ export class ShopComponent implements OnInit {
     
     this.cartService.create(cart).then(_=> {
       console.log("ShopItem succesfully added to cart!");
+      setTimeout(() => {this.domDocument.location.href = "/cart"}, 300); 
     }).catch(error => {
       console.log(error);
     });

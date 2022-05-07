@@ -26,7 +26,6 @@ export class CartComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCartItems();
-    this.isCartEmpty();
   }
 
   getCartItems() {
@@ -36,15 +35,16 @@ export class CartComponent implements OnInit {
     const allItems=this.cartService.getCartByUid(user.uid).subscribe(data => {
       allItems.unsubscribe();
       this.cartItems=data;
+      this.isCartEmpty();
       this.getShopItemsFromCart();
     })
   }
 
   isCartEmpty(){
     if (this.cartItems.length==0){
-      this.cartEmpty=false;
-    } else {
       this.cartEmpty=true;
+    } else {
+      this.cartEmpty=false;
     }
   }
 
@@ -73,7 +73,7 @@ export class CartComponent implements OnInit {
         }
       })
     }
-    setTimeout(() => {this.domDocument.location.reload()}, 150); 
+    setTimeout(() => {this.domDocument.location.reload()}, 300); 
     }
 
 }
